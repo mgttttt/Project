@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
     public float jumpForce = 12f;
     private BoxCollider2D _box;
     private Animator _anim;
+    public int _healthPoints;
 
     void Start()
     {
@@ -47,5 +48,11 @@ public class CharacterController : MonoBehaviour
                 transform.localScale = new Vector3(-2f, 2f, 2f);
             }
         }
+
+    }
+    public void TakeDamage(int _damage)
+    {
+        _healthPoints -= _damage;
+        Debug.Log(_healthPoints);
     }
 }
